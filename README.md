@@ -1,4 +1,4 @@
-pimatic-uframe
+pimatic-iframe
 =======================
 
 This is [Pimatic](http://pimatic.org) plugin for iframes.
