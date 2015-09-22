@@ -1,0 +1,10 @@
+<script id="iframe-template" type="text/template">
+    <li data-bind="attr: { id: id }" class="sortable no-header">
+        <div>
+            <label class="device-label" data-bind="text: name" />
+        </div>
+        <div>
+            <iframe data-bind="attr:{src: url, width: width, height: height, name: id}" /><br />
+        </div>
+    </li>
+</script>

@@ -1,0 +1,36 @@
+{
+    "name": "pimatic-iframe",
+    "description": "Pimatic iframe plugin",
+    "author": "Kevin Schreiber <blackoise@googlemail.com> (http://www.blackoise.de)",
+    "main": "iframe",
+    "files": [
+        "iframe.coffee",
+        "README.md",
+        "device-config-schema.coffee",
+        "iframe-config-schema.coffee",
+        "app/iframe-page.coffee",
+        "app/iframe-template.html"
+    ],
+    "keywords": [
+        "pimatic",
+        "plugin",
+        "iframe"
+    ],
+    "version": "0.0.1",
+    "homepage": "http://github.com/Oitzu/pimatic-iframe",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Oitzu/pimatic-iframe.git"
+    },
+    "configSchema": "iframe-config-schema.coffee",
+    "dependencies": {
+    },
+    "peerDependencies": {
+        "pimatic": "0.8.*"
+    },
+    "engines": {
+        "node": ">0.8.x",
+        "npm": ">1.1.x"
+    }
+}
