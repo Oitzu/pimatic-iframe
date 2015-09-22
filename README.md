@@ -20,7 +20,7 @@ Configuration
 You have to add a iframe Device device into your config.json based on these example schema ready to copy paste.
 
     {
-      "class": "iframeDevice"
+      "class": "iframeDevice",
       "id" : "my_iframe",
       "name": "My iframe",
       "url": "http://www.google.com",
