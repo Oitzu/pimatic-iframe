@@ -40,7 +40,15 @@ module.exports = (env) ->
 			height:
 				description: "Height of the Image"
 				type: "number"	
-				default : 240											
+				default : 240
+			border:
+				description: "Show border on iframe"
+				type: "number"
+				default : 1
+			scrolling:
+				description: "Scrolling on iframe enabled"
+				type: "string"
+				default : "yes"
 
 		template: 'iframe'
 		
@@ -50,11 +58,15 @@ module.exports = (env) ->
 			@url = @config.url
 			@width = @config.width
 			@height = @config.height
+			@border = @config.border
+			@scrolling = @config.scrolling
 			super()
 			
 		getWidth: -> Promise.resolve(@width)
 		getHeight: -> Promise.resolve(@height)
-		getUrl : -> Promise.resolve(@url)
+		getUrl: -> Promise.resolve(@url)
+		getBorder: -> Promise.resolve(@border)
+		getScrolling: -> Promise.resolve(@scrolling)
 
 
 	myPlugin = new iframePlugin

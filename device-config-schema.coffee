@@ -11,11 +11,19 @@ module.exports = {
 				type: "string"       
 			width:
 				description: "Width of iframe"
-				type: "number"				
-				default : 340				
+				type: "number"
+				default : 340
 			height:
 				description: "Height of iframe"
 				type: "number"
-				default : 240				
+				default : 240
+			border:
+				description: "Show border on iframe"
+				type: "number"
+				default : 1
+			scrolling:
+				description: "Scrolling on iframe enabled"
+				type: "string"
+				default : "yes"
 	}
 }

@@ -7,7 +7,9 @@ $(document).on( "templateinit", (event) ->
 			@name = @device.name
 			@url = @device.config.url
 			@width = @device.config.width  ? @device.configDefaults.width
-			@height = @device.config.height ? @device.configDefaults.height 
+			@height = @device.config.height ? @device.configDefaults.height
+			@border = @device.config.border ? @device.configDefaults.border
+			@scrolling = @device.config.scrolling = @device.configDefaults.scrolling
 			super(templData,@device)
   
   # register the item-class

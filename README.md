@@ -6,8 +6,6 @@ You can develop, edit and contribute for this plugin by forking this plugin in [
 
 Installation
 -------------
-Add this plugin by go to Pimatic apps Plugin menu
-
 Add the plugin to the plugin section:
 
     {
@@ -25,7 +23,9 @@ You have to add a iframe Device device into your config.json based on these exam
       "name": "My iframe",
       "url": "http://www.google.com",
       "width": 340,
-      "height": 240
+      "height": 240,
+      "border": 1,
+      "scrolling": "yes"
     },
 
 Description:
@@ -35,10 +35,13 @@ Description:
     id : should be your unique device id
     name : name of your device
 
-    url : url that will be displayed in the iframe
-    width : width of iframe
-    Height : hight of iframe
+    url : URL that will be displayed in the iframe
+    width : Width of iframe
+    height : Height of iframe
+    border : Show border arround iframe (1 = yes, 0 = no)
+    scrolling : Show scrollbars in iframe (yes/no)
 
 Version History
 ---------------
     0.0.1 : Initial release
+    0.0.2 : Adding border and scrolling options
