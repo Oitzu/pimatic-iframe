@@ -9,7 +9,10 @@ $(document).on( "templateinit", (event) ->
 			@width = @device.config.width  ? @device.configDefaults.width
 			@height = @device.config.height ? @device.configDefaults.height
 			@border = @device.config.border ? @device.configDefaults.border
-			@scrolling = @device.config.scrolling = @device.configDefaults.scrolling
+			@scrolling = @device.config.scrolling ? @device.configDefaults.scrolling
+			@scale = @device.config.scale ? @device.configDefaults.scale
+			@divWidth = Math.round(@width * @scale) + @border
+			@divHeight = Math.round(@height * @scale) + @border
 			super(templData,@device)
   
   # register the item-class

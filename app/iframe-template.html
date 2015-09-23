@@ -3,8 +3,24 @@
         <div>
             <label class="device-label" data-bind="text: name" />
         </div>
-        <div>
-            <iframe data-bind="attr:{src: url, width: width, height: height, name: id, scrolling: scrolling}, style:{border: border}" /><br />
+        <div data-bind="style:{
+                            padding: '0',
+                            overflow: 'hidden',
+                            height: '' + divHeight + 'px'
+                        }">
+            <iframe data-bind="attr:{
+                                    src: url,
+                                    width: width,
+                                    height: height,
+                                    name: id,
+                                    scrolling: scrolling,
+                                    overflow: 'hidden'},
+                                style:{
+                                    border: '0',
+                                    transform: 'scale(' + scale + ')',
+                                    mozTransform: 'scale(' + scale + ')',
+                                    transformOrigin: '0 0',
+                                    mozTransformOrigin: '0 0'}"/>
         </div>
     </li>
 </script>

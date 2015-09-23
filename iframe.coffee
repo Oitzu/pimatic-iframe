@@ -49,7 +49,10 @@ module.exports = (env) ->
 				description: "Scrolling on iframe enabled"
 				type: "string"
 				default : "yes"
-
+			border:
+				description: "Scaling factor for iframe content"
+				type: "number"
+				default : 1
 		template: 'iframe'
 		
 		constructor: (@config,@plugin) ->
@@ -60,6 +63,7 @@ module.exports = (env) ->
 			@height = @config.height
 			@border = @config.border
 			@scrolling = @config.scrolling
+			@scale = @config.scale
 			super()
 			
 		getWidth: -> Promise.resolve(@width)
@@ -67,6 +71,7 @@ module.exports = (env) ->
 		getUrl: -> Promise.resolve(@url)
 		getBorder: -> Promise.resolve(@border)
 		getScrolling: -> Promise.resolve(@scrolling)
+		getScale: -> Promise.resolve(@scale)
 
 
 	myPlugin = new iframePlugin
