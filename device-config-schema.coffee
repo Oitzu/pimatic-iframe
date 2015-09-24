@@ -29,5 +29,9 @@ module.exports = {
 				description: "Scaling factor for iframe content"
 				type: "number"
 				default : 1
+			reload:
+				description: "Reload cycle in seconds for iframe source. 0 = no reload"
+				type: "number"
+				default : 0
 	}
 }

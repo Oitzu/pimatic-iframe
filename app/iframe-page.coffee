@@ -4,6 +4,7 @@ $(document).on( "templateinit", (event) ->
 	class iframeDeviceItem extends pimatic.DeviceItem
 		constructor: (templData, @device) ->
 			@id = @device.id
+			@frameId = @device.id + "_iframe"
 			@name = @device.name
 			@url = @device.config.url
 			@width = @device.config.width  ? @device.configDefaults.width
@@ -14,7 +15,13 @@ $(document).on( "templateinit", (event) ->
 			@divWidth = Math.round(@width * @scale) + @border
 			@divHeight = Math.round(@height * @scale) + @border
 			super(templData,@device)
-  
+
+			@reload = @device.config.reload  ? @device.configDefaults.reload
+			if @reload > 0
+				setInterval ( =>
+					frame = document.getElementById @frameId
+					frame.src = frame.src if frame?
+				), @reload * 1000
   # register the item-class
 	pimatic.templateClasses['iframe'] = iframeDeviceItem
 )
