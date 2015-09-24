@@ -49,7 +49,7 @@ module.exports = (env) ->
 				description: "Scrolling on iframe enabled"
 				type: "string"
 				default : "yes"
-			border:
+			scale:
 				description: "Scaling factor for iframe content"
 				type: "number"
 				default : 1

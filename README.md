@@ -25,7 +25,8 @@ You have to add a iframe Device device into your config.json based on these exam
       "width": 340,
       "height": 240,
       "border": 1,
-      "scrolling": "yes"
+      "scrolling": "yes",
+      "scale": 1
     },
 
 Description:
@@ -40,8 +41,10 @@ Description:
     height : Height of iframe
     border : Show border arround iframe (1 = yes, 0 = no)
     scrolling : Show scrollbars in iframe (yes/no)
+    scale : scaling factor of iframe content
 
 Version History
 ---------------
     0.0.1 : Initial release
     0.0.2 : Adding border and scrolling options
+    0.0.3 : Adding scaling factor
