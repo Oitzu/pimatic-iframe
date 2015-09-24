@@ -25,5 +25,9 @@ module.exports = {
 				description: "Scrolling on iframe enabled"
 				type: "string"
 				default : "yes"
+			scale:
+				description: "Scaling factor for iframe content"
+				type: "number"
+				default : 1
 	}
 }
