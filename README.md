@@ -26,7 +26,8 @@ You have to add a iframe Device device into your config.json based on these exam
       "height": 240,
       "border": 1,
       "scrolling": "yes",
-      "scale": 1
+      "scale": 1,
+      "reload": 0
     },
 
 Description:
@@ -42,9 +43,11 @@ Description:
     border : Show border arround iframe (1 = yes, 0 = no)
     scrolling : Show scrollbars in iframe (yes/no)
     scale : scaling factor of iframe content
+    reload : Reload cycle in seconds for iframe source. 0 = no reload
 
 Version History
 ---------------
     0.0.1 : Initial release
     0.0.2 : Adding border and scrolling options
     0.0.3 : Adding scaling factor
+    0.0.4 : Adding reload
