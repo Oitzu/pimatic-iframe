@@ -53,6 +53,10 @@ module.exports = (env) ->
 				description: "Scaling factor for iframe content"
 				type: "number"
 				default : 1
+			reload:
+				description: "Reload cycle in seconds for iframe source. 0 = no reload"
+				type: "number"
+				default : 0
 		template: 'iframe'
 		
 		constructor: (@config,@plugin) ->
@@ -64,6 +68,7 @@ module.exports = (env) ->
 			@border = @config.border
 			@scrolling = @config.scrolling
 			@scale = @config.scale
+			@reload = @config.reload
 			super()
 			
 		getWidth: -> Promise.resolve(@width)
@@ -72,6 +77,7 @@ module.exports = (env) ->
 		getBorder: -> Promise.resolve(@border)
 		getScrolling: -> Promise.resolve(@scrolling)
 		getScale: -> Promise.resolve(@scale)
+		getReload: -> Promise.resolve(@reload)
 
 
 	myPlugin = new iframePlugin
