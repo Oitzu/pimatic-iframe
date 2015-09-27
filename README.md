@@ -45,6 +45,17 @@ Description:
     scale : scaling factor of iframe content
     reload : Reload cycle in seconds for iframe source. 0 = no reload
 
+Load Action:
+-------------
+
+As part of rules you can use the following action:
+
+* load [the] device with "url"
+
+*Example:*
+
+* load myIframe with "http://www.pimatic.org"
+
 Version History
 ---------------
     0.0.1 : Initial release

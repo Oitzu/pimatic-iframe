@@ -10,7 +10,7 @@ module.exports = (env) ->
   -------------
   Provides the ability to load an iframe devices with a new source:
 
-  * load _device_ with _value_
+  * load [the]_device_ with _value_
 
   where _device_ is the name or id of an iframe device.
   ###
