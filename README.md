@@ -54,7 +54,7 @@ As part of rules you can use the following action:
 
 *Example:*
 
-* load myIframe with "http://www.pimatic.org"
+* load my_iframe with "http://www.pimatic.org"
 
 Version History
 ---------------
@@ -62,3 +62,4 @@ Version History
     0.0.2 : Adding border and scrolling options
     0.0.3 : Adding scaling factor
     0.0.4 : Adding reload
+    0.1.0 : Added better browser compatibility and load action provider.

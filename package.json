@@ -16,7 +16,7 @@
         "plugin",
         "iframe"
     ],
-    "version": "0.0.4",
+    "version": "0.1.0",
     "homepage": "http://github.com/Oitzu/pimatic-iframe",
     "private": false,
     "repository": {
