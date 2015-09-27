@@ -22,6 +22,13 @@ $(document).on( "templateinit", (event) ->
 					frame = document.getElementById @frameId
 					frame.src = frame.src if frame?
 				), @reload * 1000
+
+			attribute = @getAttribute("url")
+			@url = ko.observable attribute.value()
+			attribute.value.subscribe (newValue) =>
+				@url newValue
+				el.val(@url()).trigger 'change', [origin: 'remote']
+
   # register the item-class
 	pimatic.templateClasses['iframe'] = iframeDeviceItem
 )
