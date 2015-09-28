@@ -5,6 +5,7 @@
     "main": "iframe",
     "files": [
         "iframe.coffee",
+        "iframe-action.coffee",
         "README.md",
         "device-config-schema.coffee",
         "iframe-config-schema.coffee",

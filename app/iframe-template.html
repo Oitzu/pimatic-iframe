@@ -1,26 +1,36 @@
 <script id="iframe-template" type="text/template">
     <li data-bind="attr: { id: id }" class="sortable no-header">
         <div>
-            <label class="device-label" data-bind="text: name" />
+            <label class="device-label" data-bind="text: name"/>
         </div>
         <div data-bind="style:{
-                            padding: '0',
-                            overflow: 'hidden',
-                            height: '' + divHeight + 'px'
+                            padding: '0px',
+                            height: divHeight + 'px',
+                            overflowX: overflow,
+                            overflowY: 'hidden'
                         }">
             <iframe data-bind="attr:{
                                     src: url,
-                                    width: width,
-                                    height: height,
+                                    marginwidth: 0 + 'px',
+                                    marginheight: 0 + 'px',
                                     id: frameId,
-                                    scrolling: scrolling,
-                                    overflow: 'hidden'},
+                                    scrolling: scrolling
+                                },
                                 style:{
-                                    border: '0',
+                                    width: width + 'px',
+                                    height: height + 'px',
+                                    border: border + 'px solid black',
                                     transform: 'scale(' + scale + ')',
-                                    mozTransform: 'scale(' + scale + ')',
+                                    webkitTransform: 'scale(' + scale + ')',
+                                    msTransform: 'scale(' + scale + ')',
+                                    oTransform: 'scale(' + scale + ')',
+                                    MozTransform: 'scale(' + scale + ')',
                                     transformOrigin: '0 0',
-                                    mozTransformOrigin: '0 0'}"/>
+                                    webkitTransformOrigin: '0 0',
+                                    msTransformOrigin: '0 0',
+                                    oTransformOrigin: '0 0',
+                                    MozTransformOrigin: '0 0'
+                                }"/>
         </div>
     </li>
 </script>
