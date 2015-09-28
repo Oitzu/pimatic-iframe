@@ -56,6 +56,30 @@ As part of rules you can use the following action:
 
 * load my_iframe with "http://www.pimatic.org"
 
+Troubleshooting
+-------------
+
+If the iframe content is not displayed the reason maybe one of the following *security restrictions*:
+
+* Pimatic web page has been loaded via https while iframe source is http. This will give you an error message on the
+  web console as shown below. *Workaround:* Either load pimatic page via http or load iframe src via https (if https
+  is supported by the site).
+
+    ```
+    Mixed Content: The page at 'https://localhost/' was loaded over HTTPS, but requested an insecure
+    resource 'http://www.pimatic.org'. This request has been blocked; the content must be served over HTTPS.
+    ```
+
+* Sourced web site denies embedding. This is the case with google.com, for example. Workaround: Some sites offer
+  additional resources which can be embedded, for example, this is the case
+  for [googlemaps](https://developers.google.com/maps/documentation/embed/guide). Otherwise, you can only
+  circumvent the restriction by putting a rewriting http proxy into the communication path.
+
+    ```
+    Refused to display 'https://www.google.de/?gfe_rd=cr&ei=7wgIVuiXCY6r8wfYkLnoDQ&gws_rd=ssl'
+    in a frame because it set 'X-Frame-Options' to 'SAMEORIGIN'.
+    ```
+
 Version History
 ---------------
     0.0.1 : Initial release
