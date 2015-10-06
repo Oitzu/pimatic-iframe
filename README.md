@@ -87,3 +87,5 @@ Version History
     0.0.3 : Adding scaling factor
     0.0.4 : Adding reload
     0.1.0 : Added better browser compatibility and load action provider.
+    0.1.1 : Fixing missing file issue #4
+    0.1.2 : Fixing infinity refresh on missing refresh value #6
