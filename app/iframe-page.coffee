@@ -55,11 +55,12 @@ $(document).on( "templateinit", (event) ->
 
 
 			# Reload the iframe source periodically if "reload" device property has been set to a value > 0
-			# See http://stackoverflow.com/a/4062084/4816693			if @reload > 0
-			setInterval ( =>
-				frame = document.getElementById @frameId
-				frame.src = frame.src if frame?
-			), @reload * 1000
+			# See http://stackoverflow.com/a/4062084/4816693
+			if @reload > 0
+				setInterval ( =>
+					frame = document.getElementById @frameId
+					frame.src = frame.src if frame?
+				), @reload * 1000
 
 
 
