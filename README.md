@@ -40,7 +40,7 @@ Description:
     url : URL that will be displayed in the iframe
     width : Width of iframe
     height : Height of iframe
-    border : Show border arround iframe (1 = yes, 0 = no)
+    border : Show border around iframe (1 = yes, 0 = no)
     scrolling : Show scrollbars in iframe (yes/no)
     scale : scaling factor of iframe content
     reload : Reload cycle in seconds for iframe source. 0 = no reload

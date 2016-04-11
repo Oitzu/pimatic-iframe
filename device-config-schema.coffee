@@ -19,11 +19,11 @@ module.exports = {
 				default : 240
 			border:
 				description: "Show border on iframe"
-				type: "number"
+				enum: [0, 1]
 				default : 1
 			scrolling:
 				description: "Scrolling on iframe enabled"
-				type: "string"
+				enum: ["yes", "no"]
 				default : "yes"
 			scale:
 				description: "Scaling factor for iframe content"
