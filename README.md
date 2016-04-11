@@ -89,3 +89,4 @@ Version History
     0.1.0 : Added better browser compatibility and load action provider.
     0.1.1 : Fixing missing file issue #4
     0.1.2 : Fixing infinity refresh on missing refresh value #6
+    0.1.3 : Fix for Pimatic 0.9
