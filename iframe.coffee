@@ -60,12 +60,16 @@ module.exports = (env) ->
 				description: "Reload cycle in seconds for iframe source. 0 = no reload"
 				type: "number"
 				default : 0
+			refreshHack:
+				description: "Add a _refresh URL param to make URL unique. This is to solve caching issues"
+				type: "boolean"
+				default: false
 		actions:
 			loadIFrameWith:
 				description: 'loads the iframe with a new source URL'
 		template: 'iframe'
 
-		constructor: (@config,@plugin) ->
+		constructor: (@config, @plugin) ->
 			@id = @config.id
 			@name = @config.name
 			@url = @config.url
@@ -75,6 +79,11 @@ module.exports = (env) ->
 			@scrolling = @config.scrolling
 			@scale = @config.scale
 			@reload = @config.reload
+			@refreshHack = @config.refreshHack
+			super()
+
+		destroy: ()  ->
+			@reload = 0
 			super()
 
 		loadIFrameWith: (url) ->
@@ -90,6 +99,7 @@ module.exports = (env) ->
 		getScrolling: -> Promise.resolve(@scrolling)
 		getScale: -> Promise.resolve(@scale)
 		getReload: -> Promise.resolve(@reload)
+		getRefreshHack: -> Promise.resolve(@refreshHack)
 
 
 	myPlugin = new iframePlugin

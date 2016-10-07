@@ -23,6 +23,20 @@ $(document).on( "templateinit", (event) ->
 			attribute.value.subscribe (newValue) =>
 				@url newValue
 
+		# coffeescript version of https://gist.github.com/niyazpk/f8ac616f181f6042d1e0
+		updateUrlParameter: (uri, key, value) ->
+			i = uri.indexOf '#'
+			hash = if i is -1 then ''  else uri.substr(i)
+			uri = if i is -1 then uri else uri.substr(0, i)
+
+			re = new RegExp '([?&])' + key + '=.*?(&|$)', 'i'
+			separator = if uri.indexOf('?') isnt -1 then '&' else '?'
+			if (uri.match(re))
+				uri = uri.replace(re, '$1' + key + '=' + value + '$2')
+			else
+				uri = uri + separator + key + '=' + value;
+			return uri + hash
+
 		afterRender: (elements) ->
 			super(elements)
 			timeout = null
@@ -59,7 +73,11 @@ $(document).on( "templateinit", (event) ->
 			if @reload > 0
 				setInterval ( =>
 					frame = document.getElementById @frameId
-					frame.src = frame.src if frame?
+					if frame?
+						if @device.config.refreshHack  ? @device.configDefaults.refreshHack
+							frame.src = @updateUrlParameter @device.config.url, '__refresh', Date.now()
+						else
+							frame.src = @device.config.url
 				), @reload * 1000
 
 
