@@ -1,7 +1,7 @@
 <script id="iframe-template" type="text/template">
     <li data-bind="attr: { id: id }" class="sortable no-header">
         <div>
-            <label class="device-label" data-bind="text: name"/>
+            <label class="device-label" data-bind="text: name, tooltip: $data.labelTooltipHtml"></label>
         </div>
         <div data-bind="style:{
                             padding: '0px',
@@ -30,7 +30,7 @@
                                     msTransformOrigin: '0 0',
                                     oTransformOrigin: '0 0',
                                     MozTransformOrigin: '0 0'
-                                }"/>
+                                }"></iframe>
         </div>
     </li>
 </script>
