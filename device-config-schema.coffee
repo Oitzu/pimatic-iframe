@@ -34,7 +34,7 @@ module.exports = {
 				type: "number"
 				default : 0
 			refreshHack:
-				description: "Add a _refresh URL param to make URL unique. This is to solve caching issues"
+				description: "Add a __refresh URL param to make URL unique. This is to solve caching issues"
 				type: "boolean"
 				default: false
 	}
