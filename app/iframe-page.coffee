@@ -75,9 +75,9 @@ $(document).on( "templateinit", (event) ->
 					frame = document.getElementById @frameId
 					if frame?
 						if @device.config.refreshHack  ? @device.configDefaults.refreshHack
-							frame.src = @updateUrlParameter @device.config.url, '__refresh', Date.now()
+							frame.src = @updateUrlParameter frame.src, '__refresh', Date.now()
 						else
-							frame.src = @device.config.url
+							frame.src = frame.src
 				), @reload * 1000
 
 
