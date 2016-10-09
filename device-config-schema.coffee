@@ -33,5 +33,9 @@ module.exports = {
 				description: "Reload cycle in seconds for iframe source. 0 = no reload"
 				type: "number"
 				default : 0
+			enforceReload:
+				description: "Add a pseudo URL param to make URL unique. This is to solve browser-caching issues"
+				type: "boolean"
+				default: false
 	}
 }
