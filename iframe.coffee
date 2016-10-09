@@ -60,8 +60,8 @@ module.exports = (env) ->
 				description: "Reload cycle in seconds for iframe source. 0 = no reload"
 				type: "number"
 				default : 0
-			refreshHack:
-				description: "Add a _refresh URL param to make URL unique. This is to solve caching issues"
+			enforceReload:
+				description: "Add a pseudo URL parameter to make URL unique. This is to solve browser-caching issues"
 				type: "boolean"
 				default: false
 		actions:
@@ -79,7 +79,7 @@ module.exports = (env) ->
 			@scrolling = @config.scrolling
 			@scale = @config.scale
 			@reload = @config.reload
-			@refreshHack = @config.refreshHack
+			@enforceReload = @config.enforceReload
 			super()
 
 		destroy: ()  ->
@@ -99,7 +99,7 @@ module.exports = (env) ->
 		getScrolling: -> Promise.resolve(@scrolling)
 		getScale: -> Promise.resolve(@scale)
 		getReload: -> Promise.resolve(@reload)
-		getRefreshHack: -> Promise.resolve(@refreshHack)
+		getEnforceReload: -> Promise.resolve(@enforceReload)
 
 
 	myPlugin = new iframePlugin
