@@ -107,3 +107,4 @@ Version History
     0.1.1 : Fixing missing file issue #4
     0.1.2 : Fixing infinity refresh on missing refresh value #6
     0.1.3 : Fix for Pimatic 0.9
+    0.2.0 : enforeReload added. (Thx to @mwittig)
