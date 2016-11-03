@@ -1,24 +1,26 @@
 <script id="iframe-template" type="text/template">
     <li data-bind="attr: { id: id }" class="sortable no-header">
-        <div>
-            <label class="device-label" data-bind="text: name, tooltip: $data.labelTooltipHtml"></label>
-        </div>
+        
+        <label class="device-label" data-bind="text: name, tooltip: $data.labelTooltipHtml"></label>
+        
         <div data-bind="style:{
-                            padding: '0px',
-                            height: divHeight + 'px',
-                            overflowX: overflow,
-                            overflowY: 'hidden'
-                        }">
-            <iframe data-bind="attr:{
+                            position: 'relative',
+                            height: '0',
+                            overflow: 'hidden',
+                            width: width.value + width.unit,
+                            paddingBottom: height.value + height.unit
+        }">
+          <iframe data-bind="attr:{
                                     src: url,
-                                    marginwidth: 0 + 'px',
-                                    marginheight: 0 + 'px',
                                     id: frameId,
                                     scrolling: scrolling
                                 },
                                 style:{
-                                    width: width + 'px',
-                                    height: height + 'px',
+                                    position: 'absolute',
+                                    top: '0',
+                                    left: '0',
+                                    width: 'calc(100% - 2 * ' + border + 'px)',
+                                    height: 'calc(100% - 2 * ' + border + 'px)',
                                     border: border + 'px solid black',
                                     transform: 'scale(' + scale + ')',
                                     webkitTransform: 'scale(' + scale + ')',
@@ -30,7 +32,9 @@
                                     msTransformOrigin: '0 0',
                                     oTransformOrigin: '0 0',
                                     MozTransformOrigin: '0 0'
-                                }"></iframe>
+                                }">
+            </iframe>
         </div>
+        
     </li>
 </script>

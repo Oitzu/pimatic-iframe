@@ -2,7 +2,7 @@ module.exports = (env) ->
 	Promise = env.require 'bluebird'
 	assert = env.require 'cassert'
 	iframeActionProvider = require('./iframe-action.coffee')(env)
-
+	
 	class iframePlugin extends env.plugins.Plugin
 		init: (app, @framework, @config) =>
 			deviceConfigDef = require("./device-config-schema")
@@ -19,6 +19,7 @@ module.exports = (env) ->
 					mobileFrontend.registerAssetFile 'js', "pimatic-iframe/app/iframe-page.coffee"
 					mobileFrontend.registerAssetFile 'html', "pimatic-iframe/app/iframe-template.html"
 				return
+
 		info: (text) ->
 			env.logger.info text
 			return
@@ -37,13 +38,30 @@ module.exports = (env) ->
 				description: "URL"
 				type: "string"
 			width:
-				description: "Width of the Image"
-				type: "number"
-				default : 340
+				description: "Width of iframe"
+				type: "object"
+				properties:
+					unit:
+						description: "width unit"
+						type: "string"
+						default: "px"
+						enum: ["px", "%"]
+					value:
+						description: "actual width value"
+						type: "number"
+						default: 340		
 			height:
-				description: "Height of the Image"
-				type: "number"
-				default : 240
+				description: "height of iframe"
+				type: "object"
+				properties:
+					unit:
+						description: "height unit"
+						type: "string"
+						default: "px"
+					value:
+						description: "actual height value"
+						type: "number"
+						default: 240		
 			border:
 				description: "Show border on iframe"
 				type: "number"
@@ -73,8 +91,12 @@ module.exports = (env) ->
 			@id = @config.id
 			@name = @config.name
 			@url = @config.url
-			@width = @config.width
-			@height = @config.height
+			@width = {}
+			@width.unit = @config.width.unit
+			@width.value = @config.width.value
+			@height = {}
+			@height.unit = @config.height.unit
+			@height.value = @config.height.value
 			@border = @config.border
 			@scrolling = @config.scrolling
 			@scale = @config.scale
@@ -101,6 +123,4 @@ module.exports = (env) ->
 		getReload: -> Promise.resolve(@reload)
 		getEnforceReload: -> Promise.resolve(@enforceReload)
 
-
-	myPlugin = new iframePlugin
-	return myPlugin
+	return new iframePlugin

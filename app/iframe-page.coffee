@@ -1,20 +1,22 @@
 $(document).on( "templateinit", (event) ->
   # define the item class
-	done = false
+	done = false	
 	class iframeDeviceItem extends pimatic.DeviceItem
 		constructor: (templData, @device) ->
 			@id = @device.id
 			@frameId = @device.id + "_iframe"
 			@name = @device.name
 			@url = @device.config.url
-			@width = @device.config.width ? @device.configDefaults.width
-			@height = @device.config.height ? @device.configDefaults.height
+			@width = {}
+			@width.value = @device.config.width.value ? @device.configDefaults.width.value
+			@width.unit = @device.config.width.unit ? @device.configDefaults.width.unit			
+			@height = {}
+			@height.value = @device.config.height.value ? @device.configDefaults.height.value
+			@height.unit = @device.config.height.unit ? @device.configDefaults.height.unit
 			@border = @device.config.border ? @device.configDefaults.border
 			@scrolling = @device.config.scrolling ? @device.configDefaults.scrolling
 			@overflow = ko.observable(if @scrolling is 'no' then 'hidden' else 'auto')
 			@scale = @device.config.scale ? @device.configDefaults.scale
-			@divWidth = Math.round(@width * @scale) + (2 * @border)
-			@divHeight = Math.round(@height * @scale) + (2 * @border)
 			@reload = @device.config.reload  ? @device.configDefaults.reload
 			super(templData,@device)
 
@@ -43,14 +45,14 @@ $(document).on( "templateinit", (event) ->
 
 			resize = =>
 				frame = document.getElementById @frameId
-#				console.log(
-#					$(frame).parent().parent().width(),
-#					$(frame).parent().parent().get(0).getBoundingClientRect().width,
-#					$(frame).parent().width(),
-#					$(frame).parent().get(0).getBoundingClientRect().width,
-#					$(frame).width(),
-#					$(frame).get(0).getBoundingClientRect().width
-#				)
+				# console.log(
+				# 	$(frame).parent().parent().width(),
+				# 	$(frame).parent().parent().get(0).getBoundingClientRect().width,
+				# 	$(frame).parent().width(),
+				# 	$(frame).parent().get(0).getBoundingClientRect().width,
+				# 	$(frame).width(),
+				# 	$(frame).get(0).getBoundingClientRect().width
+				# )
 				if (frame? and $(frame).parent().width() >= $(frame).get(0).getBoundingClientRect().width)
 					@overflow 'hidden'
 				else if @scrolling isnt 'no'
