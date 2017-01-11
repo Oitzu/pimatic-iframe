@@ -11,12 +11,30 @@ module.exports = {
 				type: "string"       
 			width:
 				description: "Width of iframe"
-				type: "number"
-				default : 340
+				type: "object"
+				properties:
+					unit:
+						description: "width unit"
+						type: "string"
+						default: "px"
+						enum: ["px", "%"]
+					value:
+						description: "actual width value"
+						type: "number"
+						default: 340		
 			height:
-				description: "Height of iframe"
-				type: "number"
-				default : 240
+				description: "height of iframe"
+				type: "object"
+				properties:
+					unit:
+						description: "height unit"
+						type: "string"
+						default: "px"
+						enum: ["px", "%"]
+					value:
+						description: "actual height value"
+						type: "number"
+						default: 240		
 			border:
 				description: "Show border on iframe"
 				enum: [0, 1]
