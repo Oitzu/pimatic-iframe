@@ -8,13 +8,15 @@ $(document).on( "templateinit", (event) ->
 			@name = @device.name
 			@url = @device.config.url
 			@width = @device.config.width ? @device.configDefaults.width
+			@unit = @device.config.unit ? @device.configDefaults.unit
 			@height = @device.config.height ? @device.configDefaults.height
 			@border = @device.config.border ? @device.configDefaults.border
 			@scrolling = @device.config.scrolling ? @device.configDefaults.scrolling
 			@overflow = ko.observable(if @scrolling is 'no' then 'hidden' else 'auto')
 			@scale = @device.config.scale ? @device.configDefaults.scale
-			@divWidth = Math.round(@width * @scale) + (2 * @border)
-			@divHeight = Math.round(@height * @scale) + (2 * @border)
+			if @unit == "px"
+				@divWidth = Math.round(@width * @scale) + (2 * @border)
+			@divHeight = Math.round(@hight * @scale) + (2 * @border)
 			@reload = @device.config.reload  ? @device.configDefaults.reload
 			super(templData,@device)
 
