@@ -2,6 +2,7 @@
     "name": "pimatic-iframe",
     "description": "Pimatic iframe plugin",
     "author": "Kevin Schreiber <blackoise@googlemail.com> (http://www.blackoise.de)",
+    "license": "GPL-2.0",
     "main": "iframe",
     "files": [
         "iframe.coffee",
@@ -17,7 +18,7 @@
         "plugin",
         "iframe"
     ],
-    "version": "0.2.0",
+    "version": "0.3.0",
     "homepage": "http://github.com/Oitzu/pimatic-iframe",
     "private": false,
     "repository": {
