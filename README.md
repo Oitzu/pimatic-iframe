@@ -24,7 +24,7 @@ Please have a look at the Trouble Shooting section below if the content isn't di
       "name": "My iframe",
       "url": "http://www.pimatic.org",
       "width": 340,
-      "unit": "px"
+      "unit": "px",
       "height": 240,
       "border": 1,
       "scrolling": "yes",
