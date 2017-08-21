@@ -24,6 +24,7 @@ Please have a look at the Trouble Shooting section below if the content isn't di
       "name": "My iframe",
       "url": "http://www.pimatic.org",
       "width": 340,
+      "unit": "px",
       "height": 240,
       "border": 1,
       "scrolling": "yes",
@@ -41,6 +42,7 @@ Description:
 
     url : URL that will be displayed in the iframe
     width : Width of iframe
+    unit: Unit of witdth specification (px, %)
     height : Height of iframe
     border : Show border around iframe (1 = yes, 0 = no)
     scrolling : Show scrollbars in iframe (yes/no)

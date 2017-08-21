@@ -40,6 +40,10 @@ module.exports = (env) ->
 				description: "Width of the Image"
 				type: "number"
 				default : 340
+			unit:
+				description: "Unit of width spec"
+				type: "string"
+				default : "px"
 			height:
 				description: "Height of the Image"
 				type: "number"
@@ -74,6 +78,7 @@ module.exports = (env) ->
 			@name = @config.name
 			@url = @config.url
 			@width = @config.width
+			@unit = @config.unit
 			@height = @config.height
 			@border = @config.border
 			@scrolling = @config.scrolling
@@ -93,6 +98,7 @@ module.exports = (env) ->
 			return Promise.resolve()
 
 		getWidth: -> Promise.resolve(@width)
+		getUnit: -> Promise.resolve(@unit)
 		getHeight: -> Promise.resolve(@height)
 		getUrl: -> Promise.resolve(@url)
 		getBorder: -> Promise.resolve(@border)
