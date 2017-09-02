@@ -16,7 +16,7 @@ $(document).on( "templateinit", (event) ->
 			@scale = @device.config.scale ? @device.configDefaults.scale
 			if @unit == "px"
 				@divWidth = Math.round(@width * @scale) + (2 * @border)
-			@divHeight = Math.round(@hight * @scale) + (2 * @border)
+			@divHeight = Math.round(@height * @scale) + (2 * @border)
 			@reload = @device.config.reload  ? @device.configDefaults.reload
 			super(templData,@device)
 
